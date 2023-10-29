@@ -10,19 +10,20 @@ const CustomSelect = styled.div`
   padding: 0 2em;
   height: 67px;
   font-size: 1rem;
-  box-shadow: 1px 4px 5px #ebe8e8;
-  background-color: hsl(0, 0%, 100%);
+  box-shadow: 1px 4px 5px var(--box-shadow-color);
+  background-color: var(--background-elements);
   cursor: pointer;
 
-  ion-icon{
-    margin-left: auto
+  ion-icon {
+    margin-left: auto;
   }
 `;
 
 export default function Select(){
   const [visibility, setVisibility] = useState("none")
 
-  const showDropdown = () => {
+  //Set visibility of filter dropdown
+  const handleVisibility = () => {
     if(visibility === "none"){
       setVisibility("flex");
     }
@@ -32,7 +33,7 @@ export default function Select(){
   }
 
   return (
-    <CustomSelect onClick={showDropdown}>
+    <CustomSelect onClick={handleVisibility}>
       <span>Filter by Region</span>
       <ion-icon
         name="chevron-down-outline"

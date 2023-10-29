@@ -7,6 +7,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
+  padding: 0 1.1em;
 `;
 
 export default function Form(){

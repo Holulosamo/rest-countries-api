@@ -5,9 +5,9 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   height: 104px;
-  box-shadow: 1px 4px 5px hsl(0, 6.97674418604648%, 91.56862745098039%);
-  color: hsl(200, 15%, 8%);
-  background-color: hsl(0, 0%, 100%);
+  box-shadow: 1px 4px 5px var(--box-shadow-color);
+  color: var(--text-color);
+  background-color: var(--background-elements);
   padding: 0 1.1em;
 
   h1 {

@@ -8,7 +8,7 @@ const StyledInput = styled.input`
   color: inherit;
 
   &::placeholder {
-    color: hsla(0, 3%, 75%, 0.945);
+    color: var(--placeholder-color);
   }
 `;
 
