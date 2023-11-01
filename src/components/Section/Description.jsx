@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Section = styled.section`
-  padding: 1.5em 0 3.5em 2em;
+  padding: .5em 0 2em 2em;
 
   ul {
     margin-top: 1.2em;

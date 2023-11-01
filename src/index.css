@@ -22,6 +22,10 @@ input[type="search"], input[type="checkbox"]{
     appearance: none;
 }
 
+ul{
+    padding: 0;
+}
+
 li{
     list-style: none;
 }

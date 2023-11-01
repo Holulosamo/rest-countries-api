@@ -1,4 +1,4 @@
-[
+{ "countries": [
   {
     "name": "Afghanistan",
     "topLevelDomain": [".af"],
@@ -16821,4 +16821,4 @@
     "cioc": "ZIM",
     "independent": true
   }
-]
+]}

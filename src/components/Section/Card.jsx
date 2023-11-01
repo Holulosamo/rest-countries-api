@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Description from "./Description";
-import countries from "../../data/data.json";
 
 const Article = styled.article`
   margin-top: 1em;
@@ -18,15 +17,13 @@ const Article = styled.article`
   }
 `;
 
-export default function Card(){
+export default function Card({name, population, region, capital, flag}){
     return (
-        countries.map(el => (
-            <Article key={el.alpha3Code}>
+            <Article>
                 <div>
-                    <img src={el.flags.png} alt={`Flag of ${el.name}`}></img>
+                    <img src={flag} alt={`Flag of ${name}`}></img>
                 </div>
-                <Description name={el.name} population={el.population} region={el.region} capital={el.capital}></Description>
+                <Description name={name }population={population} region={region} capital={capital}></Description>
             </Article>
-        ))
     );
 }
