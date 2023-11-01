@@ -23,7 +23,7 @@ export default function Card({name, population, region, capital, flag}){
                 <div>
                     <img src={flag} alt={`Flag of ${name}`}></img>
                 </div>
-                <Description name={name }population={population} region={region} capital={capital}></Description>
+                <Description name={name}population={population} region={region} capital={capital}></Description>
             </Article>
     );
 }
