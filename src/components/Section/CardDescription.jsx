@@ -16,10 +16,10 @@ const Section = styled.section`
   }
 `;
 
-export default function Description({ name, population, region, capital }) {
+export default function Description({ countryName, population, region, capital }) {
   return (
     <Section>
-      <h3>{name}</h3>
+      <h3>{countryName}</h3>
       <ul>
         <li>
           <span>Population: </span>

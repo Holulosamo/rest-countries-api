@@ -1,15 +1,19 @@
-// import { useState } from 'react'
 import Header from './components/Header/Header'
 import './App.css'
 import Main from './components/Main/Main';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Details from "./components/Details/Details";
 
-function App() {
+function App() {  
+
   return (
-    <BrowserRouter basename="app"> 
+    <div className="app">
       <Header></Header>
-      <Main></Main>
-    </BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Main />}></Route>
+        <Route path="/country/:name" element={<Details />}></Route>
+      </Routes>
+    </div>
   );
 }
 

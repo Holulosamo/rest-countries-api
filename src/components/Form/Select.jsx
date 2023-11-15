@@ -22,7 +22,7 @@ const CustomSelect = styled.div`
 export default function Select(){
   const [visibility, setVisibility] = useState("none")
 
-  //Set visibility of filter dropdown
+  //Setting visibility of menu dropdown
   const handleVisibility = () => {
     if(visibility === "none"){
       setVisibility("flex");
