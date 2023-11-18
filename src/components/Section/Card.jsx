@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import CardDescription from "./CardDescription";
 import { Link } from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
-const StyledLink = styled(Link)`
+const LinkElement = styled(Link)`
   margin-top: 1em;
   border-radius: 7px;
   width: 300px;
@@ -20,29 +21,25 @@ const StyledLink = styled(Link)`
   }
 `;
 
-export default function Card({countryName, nativeName, subRegion, topLevelDomain, currencies, languages, borders, population, region, capital, flag, svgflag}){
+export default function Card(){
+  const {data} = useFetch();
+  console.log(data);
+  
+  const renderElements = () => {
+    const element = data.map(item => ( 
+    <LinkElement key={item.alpha3Code} to={{pathname:`/${item.name}`}} state={item}>
+      <div>
+        <img src={item.flag} alt={`Flag of ${item.name}`}></img>
+      </div>
+      <CardDescription countryName={item.name} population={item.population} region={item.region} capital={item.capital}></CardDescription>
+    </LinkElement>))
 
-  //Creating an object parameter to pass in the Link state
-  const params = {
-    countryName,
-    nativeName,
-    population,
-    region,
-    subRegion,
-    capital,
-    topLevelDomain,
-    currencies,
-    languages,
-    borders,
-    svgflag
+    return element;
   }
 
   return (
-    <StyledLink to={`/country/${countryName}`} state={params}>
-      <div>
-        <img src={flag} alt={`Flag of ${countryName}`}></img>
-      </div>
-      <CardDescription countryName={countryName} population={population} region={region} capital={capital}></CardDescription>
-    </StyledLink>
+    <>
+      {data && renderElements()}
+    </>
   );
 }

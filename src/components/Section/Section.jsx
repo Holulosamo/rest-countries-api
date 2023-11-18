@@ -19,33 +19,10 @@ const StyledSection = styled.section`
 export default function Section(){
     const {data, loading, error} = useFetch();
 
-    console.log(data);
-
-    //Rendering card Item and passing props
-    const renderCard = () => {
-      return data.map(item => (
-      <Card 
-        key={item.alpha3Code} 
-        countryName={item.name} 
-        nativeName = {item.nativeName}
-        subRegion = {item.subregion}
-        topLevelDomain = {item.topLevelDomain}
-        currencies = {item.currencies}
-        languages = {item.languages}
-        borders = {item.borders}
-        population={item.population} 
-        region={item.region} 
-        capital={item.capital} 
-        flag={item.flags.png}
-        svgflag={item.flags.svg}>
-      </Card>
-      ))
-    }
-
     return(
         <StyledSection>
             {loading && <div>Loading...</div>}
-            {data && renderCard()}
+            {data && <Card></Card>}
             {error && <div>{error}</div>}
         </StyledSection>
     )

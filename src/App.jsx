@@ -5,13 +5,12 @@ import { Routes, Route } from 'react-router-dom';
 import Details from "./components/Details/Details";
 
 function App() {  
-
   return (
     <div className="app">
       <Header></Header>
       <Routes>
         <Route path="/" element={<Main />}></Route>
-        <Route path="/country/:name" element={<Details />}></Route>
+        <Route path="/:name" element={<Details/>}></Route>
       </Routes>
     </div>
   );
