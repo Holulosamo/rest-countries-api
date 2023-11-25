@@ -14,8 +14,7 @@ const LinkElement = styled(Link)`
   color: inherit;
 
   img {
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
+    border-radius: 5px 5px 0px 0px;
     height: 209px;
     width: 300px;
   }

@@ -23,7 +23,7 @@ export default function Description({ countryName, population, region, capital }
       <ul>
         <li>
           <span>Population: </span>
-          {population}
+          {new Intl.NumberFormat("en-US").format(population)}
         </li>
         <li>
           <span>Region: </span>

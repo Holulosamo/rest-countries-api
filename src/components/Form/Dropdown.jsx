@@ -4,7 +4,8 @@ const DropdownMenu = styled.ul`
   position: absolute;
   top: 75px;
   left: 0;
-  display: ${(props) => props.visibility}; //Switching visibility between none or flex
+  display: ${(props) =>
+    props.visibility}; //Switching visibility between none or flex
   flex-direction: column;
   gap: 0.5em;
   width: inherit;

@@ -1,7 +1,5 @@
 import { useLocation } from "react-router-dom";
-import styled from "styled-components";
-
-const Article = styled.article``
+import {ListWrapper, Span} from "../../../Common/sharedStyles";
 
 export default function LeftColumn(){
     const {
@@ -9,33 +7,31 @@ export default function LeftColumn(){
     nativeName,
     population,
     region,
-    subRegion,
+    subregion,
     capital,
-    flag} = useLocation().state;
+    } = useLocation().state;
 
     return (
-      <Article>
-        <div>
-          <img src={flag} alt={`Flag of ${name}`} />
-        </div>
+      <article>
         <h2>{name}</h2>
-        <ul>
+        <ListWrapper>
           <li>
-            <span>Native Name:</span> {nativeName}
+            <Span>Native Name:</Span> {nativeName}
           </li>
           <li>
-            <span>Population:</span> {population}
+            <Span>Population:</Span>{" "}
+            {new Intl.NumberFormat("en-US").format(population)}
           </li>
           <li>
-            <span>Region:</span> {region}
+            <Span>Region:</Span> {region}
           </li>
           <li>
-            <span>Sub Region:</span> {subRegion}
+            <Span>Sub Region:</Span> {subregion}
           </li>
           <li>
-            <span>Capital:</span> {capital}
+            <Span>Capital:</Span> {capital}
           </li>
-        </ul>
-      </Article>
+        </ListWrapper>
+      </article>
     );
 }

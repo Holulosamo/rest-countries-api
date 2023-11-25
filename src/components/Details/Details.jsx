@@ -4,14 +4,15 @@ import Description from "./Description";
 import { useLocation } from "react-router-dom";
 
 const Section = styled.section`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  justify-content: center;
   gap: 5em;
+  width: 100%;
   padding: 0 .5em 0 .5em;
 
   img {
-    width: 90%;
-    max-width: 512px;
+    width: 100%;
+    max-width: 550px;
   }
 `;
 

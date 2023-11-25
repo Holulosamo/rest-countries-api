@@ -7,7 +7,7 @@ const Button = styled(Link)`
   justify-content: space-evenly;
   width: 120px;
   height: 40px;
-  margin-right: auto;
+  margin: 3em auto 0 0;
   text-decoration: none;
   color: var(--text-color);
   background-color: var(--background-elements);

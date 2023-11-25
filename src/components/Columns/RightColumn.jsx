@@ -1,25 +1,23 @@
 import { useLocation } from "react-router-dom";
-import styled from "styled-components";
-
-const Article = styled.article``
+import {ListWrapper, Span} from "../../../Common/sharedStyles";
 
 export default function RightColumn(){
     const {topLevelDomain, currencies, languages} = useLocation().state;
 
     const renderListItems = (data) => {
-        const element = data.map((item, index) => <li key={index}>{item.name}</li>);
+        const element = data ? data.map((item) => item.name).join(", ") : "";
         return element;
     }
 
     return (
-      <Article>
-        <ul>
+      <article>
+        <ListWrapper>
           <li>
-            <span>Top Level Domain:</span> {topLevelDomain}
+            <Span>Top Level Domain:</Span> {topLevelDomain}
           </li>
-        <ul><span>Currencies: </span> {renderListItems(currencies)}</ul>
-        <ul><span>Languages: </span> {renderListItems(languages)}</ul>
-        </ul>
-      </Article>
+        <ul><Span>Currencies: </Span> {renderListItems(currencies)}</ul>
+        <ul><Span>Languages: </Span> {renderListItems(languages)}</ul>
+        </ListWrapper>
+      </article>
     );
 }
