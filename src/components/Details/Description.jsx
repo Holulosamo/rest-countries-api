@@ -24,7 +24,7 @@ const Aside = styled.aside`
   }
 `;
 
-export default function Description(){
+export default function Description({theme}){
     const {
       name,
       flag
@@ -37,7 +37,7 @@ export default function Description(){
         </div>
         <LeftColumn></LeftColumn>
         <RightColumn></RightColumn>
-        <BottomColumn></BottomColumn>
+        <BottomColumn theme={theme}></BottomColumn>
       </Aside>
     );
 }

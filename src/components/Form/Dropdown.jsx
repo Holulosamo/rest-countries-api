@@ -7,10 +7,19 @@ const DropdownMenu = styled.ul`
   display: ${(props) =>
     props.visibility}; //Switching visibility between none or flex
   flex-direction: column;
-  gap: 0.5em;
+  gap: 0.8em;
   width: inherit;
-  padding: 1.5em 0 1.5em 2em;
+  padding: 1.5em 0;
   background-color: inherit;
+
+  li{
+    width: 100;
+    padding-left: 2em;
+  }
+
+  li:hover{
+    background-color: #e7e4e473;
+  }
 `;
 
 

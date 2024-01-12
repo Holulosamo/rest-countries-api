@@ -5,15 +5,20 @@ const StyledInput = styled.input`
   width: 80%;
   font-size: 1rem;
   background-color: inherit;
-  color: inherit;
+  color: ${(props) => props.theme.textColor};
 
   &::placeholder {
-    color: var(--placeholder-color);
+    color: ${(props) => props.theme.placeholder ?? props.theme.textColor};
   }
 `;
 
-export default function Input(){
+export default function Input({theme, setSearch}){
+
+    const handleChange = (e) => {
+      setSearch(e.target.value)
+    }
+
     return(
-        <StyledInput type="search" placeholder="Search for a country..."></StyledInput>
+        <StyledInput theme={theme} type="search" placeholder="Search for a country..." onChange={handleChange}></StyledInput>
     )
 }

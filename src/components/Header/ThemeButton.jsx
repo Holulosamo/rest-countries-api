@@ -16,9 +16,9 @@ const StyledButton = styled.button`
     }
 `;
 
-export default function Button(){
+export default function Button({changeTheme}){
     return (
-      <StyledButton>
+      <StyledButton onClick={changeTheme}>
         <ion-icon className="icon" name="moon-outline"></ion-icon>
         <span>Dark Mode</span>
       </StyledButton>

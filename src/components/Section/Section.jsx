@@ -10,19 +10,26 @@ const StyledSection = styled.section`
   margin-top: 3em;
   padding-bottom: 3em;
 
-  div{
+  div {
     font-size: 1.5rem;
     font-weight: 800;
+    color: ${(props) => props.theme.textColor};
+  }
+
+  a {
+    box-shadow: 1px 4px 5px ${(props) => props.theme.boxShadow};
+    background-color: ${(props) => props.theme.elementsColor};
+    color: ${(props) => props.theme.textColor};
   }
 `;
 
-export default function Section(){
+export default function Section({theme, search}){
     const {data, loading, error} = useFetch();
 
     return(
-        <StyledSection>
+        <StyledSection theme={theme}>
             {loading && <div>Loading...</div>}
-            {data && <Card></Card>}
+            {data && <Card search={search}></Card>}
             {error && <div>{error}</div>}
         </StyledSection>
     )

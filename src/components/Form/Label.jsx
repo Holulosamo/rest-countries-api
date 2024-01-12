@@ -9,11 +9,11 @@ const Label = styled.label`
   max-width: 500px;
   height: 63px;
   align-self: center;
-  box-shadow: 1px 4px 5px var(--box-shadow-color);
-  background-color: var(--background-elements);
+  box-shadow: ${(props) => props.theme.boxShadow};
+  background-color: ${(props) => props.theme.elementsColor};
   ion-icon {
     font-size: 1.5rem;
-    color: var(--placeholder-color);
+    color: ${(props) => props.theme.placeholder ?? props.theme.textColor};
   }
 `;
 

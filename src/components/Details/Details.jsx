@@ -9,6 +9,7 @@ const Section = styled.section`
   gap: 5em;
   width: 100%;
   padding: 0 .5em 0 .5em;
+  color: ${props => props.theme.textColor};
 
   img {
     width: 100%;
@@ -16,14 +17,13 @@ const Section = styled.section`
   }
 `;
 
-export default function Details(){
+export default function Details({theme}){
   const location = useLocation()
-  console.log(location.state)
 
   return (
-    <Section>
-      <BackButton></BackButton>
-      <Description location={location}></Description>
+    <Section theme={theme}>
+      <BackButton theme={theme}></BackButton>
+      <Description location={location} theme={theme}></Description>
     </Section>
   );
 }

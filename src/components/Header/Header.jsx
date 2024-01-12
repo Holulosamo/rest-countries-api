@@ -5,9 +5,10 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   height: 104px;
-  box-shadow: 1px 4px 5px var(--box-shadow-color);
-  color: var(--text-color);
-  background-color: var(--background-elements);
+  box-shadow: ${(props) => props.theme.boxShadow};
+  color: ${(props) =>
+    props.theme.textColor};
+  background-color: ${(props => props.theme.elementsColor)};
   padding: 0 1.1em;
 
   h1 {
@@ -15,11 +16,11 @@ const StyledHeader = styled.header`
   }
 `;
 
-export default function Header(){
+export default function Header({changeTheme, theme}){
   return(
-    <StyledHeader>
+    <StyledHeader theme={theme}>
       <h1>Where in the world?</h1>
-      <ThemeButton></ThemeButton>
+      <ThemeButton changeTheme={changeTheme}></ThemeButton>
     </StyledHeader>
   )
 }

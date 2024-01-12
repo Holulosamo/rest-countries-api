@@ -9,15 +9,15 @@ const Button = styled(Link)`
   height: 40px;
   margin: 3em auto 0 0;
   text-decoration: none;
-  color: var(--text-color);
-  background-color: var(--background-elements);
-  box-shadow: 10px 10px 30px var(--box-shadow-color);
+  color: ${(props) => props.theme.textColor};
+  background-color: ${(props) => props.theme.elementsColor};
+  box-shadow: 10px 10px 30px ${(props) => props.theme.boxShadow};
   border-radius: 5px;
 `;
 
-export default function BackButton(){
+export default function BackButton({theme}){
     return (
-      <Button to="/">
+      <Button to="/" theme={theme}>
         <ion-icon name="arrow-back-outline"></ion-icon>
         <p>Back</p>
       </Button>

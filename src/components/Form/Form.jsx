@@ -10,14 +10,14 @@ const StyledForm = styled.form`
   padding: 0 1.1em;
 `;
 
-export default function Form(){
+export default function Form({theme, setSearch}){
     return (
       <StyledForm>
-        <Label>
+        <Label theme={theme}>
           <ion-icon name="search" class="main__form-icon"></ion-icon>
-          <Input type="search" placeholder="Search for a country..."></Input>
+          <Input theme={theme} type="search" placeholder="Search for a country..." setSearch={setSearch}></Input>
         </Label>
-        <Select></Select>
+        <Select theme={theme}></Select>
       </StyledForm>
     );
 }
