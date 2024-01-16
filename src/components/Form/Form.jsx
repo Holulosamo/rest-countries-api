@@ -7,7 +7,8 @@ const StyledForm = styled.form`
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
-  padding: 0 1.1em;
+  max-width: 1480px;
+  margin: 0 auto;
 `;
 
 export default function Form({theme, setSearch, filter, setFilter}){

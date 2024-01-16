@@ -6,7 +6,7 @@ const Label = styled.label`
   gap: 1.7em;
   padding: 2.1em;
   width: 92%;
-  max-width: 500px;
+  max-width: 462px;
   height: 63px;
   align-self: center;
   box-shadow: ${({theme}) => theme.boxShadow};

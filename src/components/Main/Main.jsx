@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const StyledMain = styled.main`
   margin-top: 2em;
+  padding-left: .8em;
 `;
 
 export default function Main({theme}){

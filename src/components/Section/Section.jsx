@@ -6,9 +6,9 @@ const StyledSection = styled.section`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 3em;
-  margin-top: 3em;
-  padding-bottom: 3em;
+  gap: 5.5em;
+  margin: 3em auto 0 auto;
+  max-width: 1480px;
 
   div {
     font-size: 1.5rem;
