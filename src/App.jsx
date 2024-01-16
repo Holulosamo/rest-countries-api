@@ -5,10 +5,11 @@ import { Routes, Route } from 'react-router-dom';
 import Details from "./components/Details/Details";
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useEffect } from 'react';
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${({theme}) => theme.backgroundColor};
 `;
 
 const lightTheme = {
@@ -29,16 +30,34 @@ const darkTheme = {
 }; 
 
 function App() {  
-    const [theme, setTheme] = useState(lightTheme);
+  const [theme, setTheme] = useState(() => {
+  return localStorage.getItem('savedTheme');
+  });
 
-    const changeTheme = () => theme === lightTheme ? setTheme(darkTheme) : setTheme(lightTheme);
+  useEffect(() => {
+    localStorage.setItem('savedTheme', theme)
+  }, [theme])
+  
+
+  const changeTheme = () => theme === 'light' ? setTheme('dark') : setTheme('light');
 
   return (
-    <Wrapper theme={theme}>
-      <Header changeTheme={changeTheme} theme={theme}></Header>
+    <Wrapper theme={theme === "light" ? lightTheme : darkTheme}>
+      <Header
+        changeTheme={changeTheme}
+        theme={theme === "light" ? lightTheme : darkTheme}
+      ></Header>
       <Routes>
-        <Route path="/" element={<Main theme={theme}/>}></Route>
-        <Route path="/:name" element={<Details theme={theme}/>}></Route>
+        <Route
+          path="/"
+          element={<Main theme={theme === "light" ? lightTheme : darkTheme} />}
+        ></Route>
+        <Route
+          path="/:name"
+          element={
+            <Details theme={theme === "light" ? lightTheme : darkTheme} />
+          }
+        ></Route>
       </Routes>
     </Wrapper>
   );

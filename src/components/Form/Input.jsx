@@ -5,10 +5,10 @@ const StyledInput = styled.input`
   width: 80%;
   font-size: 1rem;
   background-color: inherit;
-  color: ${(props) => props.theme.textColor};
+  color: ${({theme}) => theme.textColor};
 
   &::placeholder {
-    color: ${(props) => props.theme.placeholder ?? props.theme.textColor};
+    color: ${({theme}) => theme.placeholder ?? theme.textColor};
   }
 `;
 

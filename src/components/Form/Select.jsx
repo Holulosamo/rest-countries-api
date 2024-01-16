@@ -10,17 +10,21 @@ const CustomSelect = styled.div`
   padding: 0 2em;
   height: 67px;
   font-size: 1rem;
-  box-shadow: 1px 4px 5px ${(props) => props.theme.boxShadow};
-  background-color: ${(props) => props.theme.elementsColor};
-  color: ${(props) => props.theme.textColor};
+  box-shadow: 1px 4px 5px ${({ theme }) => theme.boxShadow};
+  background-color: ${({ theme }) => theme.elementsColor};
+  color: ${({ theme }) => theme.textColor};
   cursor: pointer;
 
   ion-icon {
     margin-left: auto;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin-left: auto;
+  }
 `;
 
-export default function Select({theme}){
+export default function Select({theme, filter, setFilter}){
   const [visibility, setVisibility] = useState("none")
 
   //Setting visibility of menu dropdown
@@ -35,12 +39,12 @@ export default function Select({theme}){
 
   return (
     <CustomSelect onClick={handleVisibility} theme={theme}>
-      <span>Filter by Region</span>
+      <span>{filter || "Filter by Region"}</span>
       <ion-icon
         name="chevron-down-outline"
         class="main__select-icon"
       ></ion-icon>
-      <Dropdown visibility={visibility}></Dropdown>
+      <Dropdown visibility={visibility} setFilter={setFilter}></Dropdown>
     </CustomSelect>
   );
 }

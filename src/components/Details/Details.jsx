@@ -9,7 +9,7 @@ const Section = styled.section`
   gap: 5em;
   width: 100%;
   padding: 0 .5em 0 .5em;
-  color: ${props => props.theme.textColor};
+  color: ${({theme}) => theme.textColor};
 
   img {
     width: 100%;

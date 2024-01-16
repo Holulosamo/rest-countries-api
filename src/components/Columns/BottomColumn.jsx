@@ -19,18 +19,18 @@ const Container = styled.div`
 const BordersList = styled.li`
   border-radius: 5px;
   padding: 1em;
-  background-color: ${(props) => props.theme.elementsColor};
-  box-shadow: 5px 5px 10px ${(props) => props.theme.boxShadow};
+  background-color: ${({theme}) => theme.elementsColor};
+  box-shadow: 5px 5px 10px ${({theme}) => theme.boxShadow};
 `;
 
 export default function BottomColumn({theme}){
     const {borders} = useLocation().state
 
     const bordersList = () => {
-        const element = borders ? borders.map((item, index) => <BordersList key={index} theme={theme}>{item}</BordersList>) : "This country has no borders countries";
-
-        return element
+      const bordersCountries = borders ? borders.map((item, index) => <BordersList key={index} theme={theme}>{item}</BordersList>) : "This country has no borders countries";
+      return bordersCountries;
     }
+
     return (
       <article>
         <BordersWrapper>

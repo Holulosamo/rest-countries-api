@@ -9,7 +9,10 @@ const LinkElement = styled(Link)`
   width: 300px;
   cursor: pointer;
   text-decoration: none;
-
+  display: ${({name, search}) =>
+    name.toLowerCase().includes(search.toLowerCase())
+      ? "block"
+      : "none"};
 
   img {
     border-radius: 5px 5px 0px 0px;
@@ -18,33 +21,36 @@ const LinkElement = styled(Link)`
   }
 `;
 
-export default function Card({ search }) {
-  const { data } = useFetch();
+export default function Card({ search, filter }) {
 
-  const filterSearch = () => {
-    return data.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
-  };
+  const {data} = useFetch();
+
+  const Element = () => {
+    return data.filter(item => item.region.includes(filter)).map((item) => (
+      <LinkElement
+        key={item.alpha3Code}
+        to={{ pathname: `/${item.name}` }}
+        state={item}
+        search={search}
+        name={item.name}
+      >
+        <div>
+          <img src={item.flag} alt={`Flag of ${item.name}`}></img>
+        </div>
+        <CardDescription
+          countryName={item.name}
+          population={item.population}
+          region={item.region}
+          capital={item.capital}
+        ></CardDescription>
+      </LinkElement>
+    ));
+  }
 
   return (
     <>
       {data &&
-        filterSearch().map((item) => (
-          <LinkElement
-            key={item.alpha3Code}
-            to={{ pathname: `/${item.name}` }}
-            state={item}
-          >
-            <div>
-              <img src={item.flag} alt={`Flag of ${item.name}`}></img>
-            </div>
-            <CardDescription
-              countryName={item.name}
-              population={item.population}
-              region={item.region}
-              capital={item.capital}
-            ></CardDescription>
-          </LinkElement>
-        ))}
+      Element()}
     </>
   );
 }

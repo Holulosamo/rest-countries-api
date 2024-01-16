@@ -13,24 +13,24 @@ const StyledSection = styled.section`
   div {
     font-size: 1.5rem;
     font-weight: 800;
-    color: ${(props) => props.theme.textColor};
+    color: ${({ theme }) => theme.textColor};
   }
 
   a {
-    box-shadow: 1px 4px 5px ${(props) => props.theme.boxShadow};
-    background-color: ${(props) => props.theme.elementsColor};
-    color: ${(props) => props.theme.textColor};
+    box-shadow: 1px 4px 5px ${({ theme }) => theme.boxShadow};
+    background-color: ${({ theme }) => theme.elementsColor};
+    color: ${({ theme }) => theme.textColor};
   }
 `;
 
-export default function Section({theme, search}){
-    const {data, loading, error} = useFetch();
-
-    return(
-        <StyledSection theme={theme}>
-            {loading && <div>Loading...</div>}
-            {data && <Card search={search}></Card>}
-            {error && <div>{error}</div>}
-        </StyledSection>
-    )
+export default function Section({theme, search, filter}){
+    const {data, loading, error} = useFetch()
+    
+    return (
+      <StyledSection theme={theme}>
+        {loading && <div>Loading...</div>}
+        {data && <Card search={search} filter={filter}></Card>}
+        {error && <div>{error}</div>}
+      </StyledSection>
+    );
 }

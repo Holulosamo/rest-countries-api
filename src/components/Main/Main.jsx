@@ -9,11 +9,13 @@ const StyledMain = styled.main`
 
 export default function Main({theme}){
     const [search, setSearch] = useState('');
+    const [filter, setFilter] = useState('');
+    // const [params, setParams] = useState(["name", "capital"]);
 
     return(
         <StyledMain>
-            <Form theme={theme} setSearch={setSearch}></Form>
-            <Section theme={theme} search={search}></Section>
+            <Form theme={theme} setSearch={setSearch} filter={filter} setFilter={setFilter}></Form>
+            <Section theme={theme} search={search} filter={filter}></Section>
         </StyledMain>
     )
 }

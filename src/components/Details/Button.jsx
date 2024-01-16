@@ -9,9 +9,9 @@ const Button = styled(Link)`
   height: 40px;
   margin: 3em auto 0 0;
   text-decoration: none;
-  color: ${(props) => props.theme.textColor};
-  background-color: ${(props) => props.theme.elementsColor};
-  box-shadow: 10px 10px 30px ${(props) => props.theme.boxShadow};
+  color: ${({theme}) => theme.textColor};
+  background-color: ${({theme}) => theme.elementsColor};
+  box-shadow: 10px 10px 30px ${({theme}) => theme.boxShadow};
   border-radius: 5px;
 `;
 

@@ -5,10 +5,10 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   height: 104px;
-  box-shadow: ${(props) => props.theme.boxShadow};
-  color: ${(props) =>
-    props.theme.textColor};
-  background-color: ${(props => props.theme.elementsColor)};
+  box-shadow: ${({theme}) => theme.boxShadow};
+  color: ${({theme}) =>
+    theme.textColor};
+  background-color: ${({theme}) => theme.elementsColor};
   padding: 0 1.1em;
 
   h1 {

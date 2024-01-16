@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import Option from "./Options";
 
 const DropdownMenu = styled.ul`
   position: absolute;
   top: 75px;
   left: 0;
-  display: ${(props) =>
-    props.visibility}; //Switching visibility between none or flex
+  display: ${({visibility}) => visibility}; //Switching visibility between none or flex
   flex-direction: column;
   gap: 0.8em;
   width: inherit;
@@ -22,16 +22,15 @@ const DropdownMenu = styled.ul`
   }
 `;
 
+const OPTIONS = [{ value: "", label: "All" }, {value: "Africa", label: "Africa"}, {value: "Americas", label: "America"}, {value: "Asia", label: "Asia"}, {value: "Europe", label: "Europe"}, {value: "Oceania", label: "Oceania"}];
 
-export default function Dropdown({visibility}) {
+//["Show All", "Africa", "America", "Asia", "Europe", "Oceania"]
+
+export default function Dropdown({visibility, setFilter}) {
+
   return (
     <DropdownMenu visibility={visibility}>
-      <li>Show All</li>
-      <li>Africa</li>
-      <li>America</li>
-      <li>Asia</li>
-      <li>Europe</li>
-      <li>Oceania</li>
+    {OPTIONS.map((item, index) => <Option key={index} value={item.value} label={item.label} setFilter={setFilter}></Option>)}
     </DropdownMenu>
   );
 }
