@@ -11,7 +11,6 @@ const StyledMain = styled.main`
 export default function Main({theme}){
     const [search, setSearch] = useState('');
     const [filter, setFilter] = useState('');
-    // const [params, setParams] = useState(["name", "capital"]);
 
     return(
         <StyledMain>

@@ -8,7 +8,9 @@ const Section = styled.section`
   justify-content: center;
   gap: 5em;
   width: 100%;
-  padding: 0 .5em 0 .5em;
+  max-width: 1480px;
+  margin: 0 auto;
+  padding: 0 1.5em;
   color: ${({theme}) => theme.textColor};
 
   img {

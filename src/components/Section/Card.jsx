@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import CardDescription from "./CardDescription";
 import { Link } from "react-router-dom";
-import useFetch from "../../hooks/useFetch";
+import data from '../../data/data.json'
 
 const LinkElement = styled(Link)`
   margin-top: 1em;
@@ -22,8 +22,6 @@ const LinkElement = styled(Link)`
 `;
 
 export default function Card({ search, filter }) {
-
-  const {data} = useFetch();
 
   const Element = () => {
     return data.filter(item => item.region.includes(filter)).map((item) => (
@@ -49,8 +47,7 @@ export default function Card({ search, filter }) {
 
   return (
     <>
-      {data &&
-      Element()}
+      {Element()}
     </>
   );
 }
