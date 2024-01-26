@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import CardDescription from "./CardDescription";
 import { Link } from "react-router-dom";
-import data from '../../data/data.json'
 
 const LinkElement = styled(Link)`
   margin-top: 1em;
@@ -10,9 +9,9 @@ const LinkElement = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   display: ${({name, search}) =>
-    name.toLowerCase().includes(search.toLowerCase())
-      ? "block"
-      : "none"};
+  name.toLowerCase().includes(search.toLowerCase())
+    ? "block"
+    : "none"};
 
   img {
     border-radius: 5px 5px 0px 0px;
@@ -21,17 +20,10 @@ const LinkElement = styled(Link)`
   }
 `;
 
-export default function Card({ search, filter }) {
+export default function Card({ item, search }) {
 
-  const Element = () => {
-    return data.filter(item => item.region.includes(filter)).map((item) => (
-      <LinkElement
-        key={item.alpha3Code}
-        to={{ pathname: `/${item.name}` }}
-        state={item}
-        search={search}
-        name={item.name}
-      >
+  return (
+    <LinkElement key={item.alpha3Code} to={{ pathname: `/${item.name}` }} state={item} search={search} name={item.name}>
         <div>
           <img src={item.flag} alt={`Flag of ${item.name}`}></img>
         </div>
@@ -42,12 +34,5 @@ export default function Card({ search, filter }) {
           capital={item.capital}
         ></CardDescription>
       </LinkElement>
-    ));
-  }
-
-  return (
-    <>
-      {Element()}
-    </>
   );
 }

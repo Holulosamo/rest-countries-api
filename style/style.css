@@ -1,0 +1,77 @@
+:root{
+    --background: hsl(0, 0%, 98%);
+    --background-elements: hsl(0, 0%, 100%);
+    --input: hsl(0, 0%, 100%);
+    --text-color: hsl(200, 15%, 8%);
+}
+
+.dark-mode{
+    --background: hsl(207, 26%, 17%);
+    --background-elements: hsl(209, 23%, 22%);
+    --input: hsl(0, 0%, 52%);
+    --text-color: hsl(0, 0%, 100%);
+}
+
+select{
+    appearance: none;
+    border: none;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--background);
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--text-color);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5em 1.2em;
+    background-color: var(--background-elements);
+    box-shadow: 1px 4px 5px #f5f4f4ec;
+}
+
+.header__title{
+    font-size: 1.1rem;
+}
+
+.header__btn--theme{
+    display: flex;
+    align-items: center;
+    gap: .6em;
+    background-color: transparent;
+    border: none;
+}
+
+.header__btn-icon{
+    font-size: 1.2rem;
+}
+
+.header__btn--theme{
+    cursor: pointer;
+}
+
+.main{
+    margin-top: 2em;
+}
+
+.main__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main__select{
+    width: 200px;
+    padding: 1em;
+}
+
+.filter{
+    display: none;
+}
