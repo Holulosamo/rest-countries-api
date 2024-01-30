@@ -26,16 +26,13 @@ const BordersList = styled.li`
 export default function BottomColumn({theme}){
     const {borders} = useLocation().state
 
-    const bordersList = () => {
-      const bordersCountries = borders ? borders.map((item, index) => <BordersList key={index} theme={theme}>{item}</BordersList>) : "This country has no borders countries";
-      return bordersCountries;
-    }
+    const bordersList = borders ? borders.map((item, index) => <BordersList key={index} theme={theme}>{item}</BordersList>) : "This country has no borders countries";
 
     return (
       <article>
         <BordersWrapper>
           <Span>Border Countries: </Span>
-          <Container>{bordersList()}</Container>
+          <Container>{bordersList}</Container>
         </BordersWrapper>
       </article>
     );

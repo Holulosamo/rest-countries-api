@@ -13,7 +13,7 @@ const StyledForm = styled.form`
 
 export default function Form({theme, setSearch, filter, setFilter}){
     return (
-      <StyledForm>
+      <StyledForm onSubmit={(e) => e.preventDefault()}>
         <Label theme={theme}>
           <ion-icon name="search" class="main__form-icon"></ion-icon>
           <Input theme={theme} type="search" placeholder="Search for a country..." setSearch={setSearch}></Input>
