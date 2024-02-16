@@ -19,7 +19,7 @@ const StyledSection = styled.section`
 
 export default function Section({theme, search, filter}){
   
-  const CardItems = data.filter(item => item.region.includes(filter)).map(item => (<Card item={item} search={search}></Card>))
+  const CardItems = data.filter(item => item.region.includes(filter)).map(item => (<Card key={item.alpha2Code} item={item} search={search}></Card>))
 
   return (
     <StyledSection theme={theme}>
