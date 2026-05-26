@@ -11,7 +11,7 @@ This webpage shows the info of every country in the world.
 ## List of technologies used in this project
 - React
 - Vite
-- CSS
+- Styled Components
 
 ## Demo
 [See live demo](https://rest-countries-api-holulosamo.vercel.app)
