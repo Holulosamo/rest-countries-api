@@ -8,10 +8,10 @@ This webpage shows the info of every country in the world.
 - Filter by region
 - Detailed view of every country
 
-## List of technologíes used in this project
+## List of technologies used in this project
 - React
 - Vite
 - CSS
 
-##Demo
-https://rest-countries-api-holulosamo.vercel.app
+## Demo
+[See live demo](https://rest-countries-api-holulosamo.vercel.app)
